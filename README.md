@@ -60,9 +60,9 @@ fancyProgressBar.setState(FancyProgressBar.ProgressState.LOADING);
 ```
 
 ### Demo App
-The sample app included demonstrates:
-How to control the button and progress bar dynamically
-How each component changes based on user interaction
+- The sample app included demonstrates:
+- How to control the button and progress bar dynamically
+- How each component changes based on user interaction
 
 <img src="demo.gif" width="400" alt="Demo of FancyViews" />
 
@@ -74,11 +74,9 @@ app/                → Demo application
 README.md           → Documentation
 
 ### Requirements
-Min SDK: 21
-
-Java 8 or Kotlin 1.8+
-
-Android Studio Electric Eel or newer
+- Min SDK: 21
+- Java 8 or Kotlin 1.8+
+- Android Studio Electric Eel or newer
 
 ### License
 MIT License – free for public and academic use.

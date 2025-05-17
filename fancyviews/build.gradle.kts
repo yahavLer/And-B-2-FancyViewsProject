@@ -40,3 +40,15 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.yahavLer"
+                artifactId = "FancyViews"
+                version = "v1.0.1"
+            }
+        }
+    }
+}

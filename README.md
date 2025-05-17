@@ -1,46 +1,89 @@
-# ✨ FancyViews – Beautiful Custom UI Components for Android
+# 📦 FancyViews – Custom Android UI Library
 
-**FancyViews** is a lightweight and flexible Android UI library that provides interactive and animated custom views to enhance the user experience in your app.
-
-Designed for simplicity, customization, and visual appeal – perfect for modern Android apps!
-
----
-
-## 🚀 Components Included
-
-### 🔘 LoadingButton – Smart Loading Button
-
-A custom button that supports multiple states:
-
-- `IDLE` – default clickable state
-- `LOADING` – shows spinner and disables interaction
-- `SUCCESS` – changes to success icon and message
-- `ERROR` – shows error message and icon
-- `DISABLED` – visually disabled and inactive
-
-**Features:**
-- Set custom text and icon for each state
-- Customize background and text colors per state
-- Smooth animations: fade + bounce
-- Listener support: `OnStateChangeListener`
+FancyViews is an open-source Android library developed as part of the Advanced Android course.  
+It provides custom UI components designed to solve everyday development challenges, with a focus on design, usability, and simplicity.
 
 ---
 
-### ⏳ FancyProgressBar – Animated Colorful Progress Indicator
+## 🎯 Purpose
 
-A spinning indeterminate progress bar with animated color cycling.
-
-**Features:**
-- Automatically transitions between custom color sequence
-- Configurable speed (interval in milliseconds)
-- Start / stop / restart at runtime
-- Fully compatible with ConstraintLayout and XML
+The library aims to simplify the implementation of interactive UI elements by providing ready-made, customizable views.  
+It is especially useful in apps that require status feedback (loading, success, error) and dynamic visual elements.
 
 ---
 
-## 🔧 Installation
+## 🔧 Components
 
-Add the library module to your project and reference it in `settings.gradle`:
+### 🔘 LoadingButton
 
-```groovy
-include ':fancyviews'
+A button with built-in support for multiple states:
+- `IDLE` – regular state
+- `LOADING` – shows a spinner
+- `SUCCESS` – shows check icon
+- `ERROR` – shows error icon
+- `DISABLED` – grayed out
+
+Each state supports:
+- Custom text
+- Custom icon
+- Custom colors
+
+### ⏳ FancyProgressBar
+
+A circular progress view that:
+- Animates color transitions in `LOADING` state
+- Shows different icons for `SUCCESS`, `ERROR`, `IDLE`, and `DISABLED` states
+- Reacts dynamically to user actions
+
+---
+
+## 🛠 Usage
+
+### XML
+
+```xml
+<com.example.fancyviews.LoadingButton
+    android:id="@+id/loadingButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+<com.example.fancyviews.FancyProgressBar
+    android:id="@+id/fancyProgressBar"
+    android:layout_width="64dp"
+    android:layout_height="64dp" />
+
+---
+
+### Java
+
+```java
+loadingButton.setState(LoadingButton.ButtonState.LOADING);
+fancyProgressBar.setState(FancyProgressBar.ProgressState.LOADING);
+
+### Demo App
+The sample app included demonstrates:
+
+How to control the button and progress bar dynamically
+
+How each component changes based on user interaction
+
+<img src="demo.gif" width="400" alt="Demo of FancyViews" />
+
+
+### Project Structure
+
+fancyviews/         → The library module
+app/                → Demo application
+README.md           → Documentation
+
+### Requirements
+Min SDK: 21
+
+Java 8 or Kotlin 1.8+
+
+Android Studio Electric Eel or newer
+
+### License
+MIT License – free for public and academic use.
+
+

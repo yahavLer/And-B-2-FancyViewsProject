@@ -12,7 +12,6 @@ import com.example.fancyviews.LoadingButton;
 import com.example.fancyviews.OnStateChangeListener;
 import com.example.fancyviews.FancyProgressBar;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private LoadingButton loadingButton;
@@ -26,10 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // שליפת הכפתור מה-XML
-        loadingButton = findViewById(R.id.loadingButton);
-        fancyProgressBar = findViewById(R.id.fancyProgressBar);
 
         findViews(); // שליפת רכיבים מה-XML
         setButtonView(); // הגדרת טקסטים, צבעים ואייקונים
@@ -52,15 +47,13 @@ public class MainActivity extends AppCompatActivity {
         btnShowError = findViewById(R.id.btnShowError);
         btnDisable = findViewById(R.id.btnDisable);
         btnReset = findViewById(R.id.btnReset);
+        loadingButton = findViewById(R.id.loadingButton);
+        fancyProgressBar = findViewById(R.id.fancyProgressBar);
     }
 
     private void setButtonView() {
         loadingButton.setTextForState(LoadingButton.ButtonState.SUCCESS, "הפעולה הצליחה!");
-        loadingButton.setIconForState(LoadingButton.ButtonState.SUCCESS, R.drawable.ic_check);
-
         loadingButton.setTextForState(LoadingButton.ButtonState.ERROR, "שגיאה בפעולה");
-        loadingButton.setIconForState(LoadingButton.ButtonState.ERROR, R.drawable.ic_error);
-
         loadingButton.setBackgroundColorForState(LoadingButton.ButtonState.IDLE, Color.parseColor("#6200EE"));
         loadingButton.setBackgroundColorForState(LoadingButton.ButtonState.SUCCESS, Color.parseColor("#4CAF50"));
         loadingButton.setBackgroundColorForState(LoadingButton.ButtonState.ERROR, Color.parseColor("#F44336"));
@@ -79,34 +72,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void setButtonAction() {
-        // לחצן: התחלת טעינה
         btnStartLoading.setOnClickListener(v -> {
             loadingButton.setState(LoadingButton.ButtonState.LOADING);
-            fancyProgressBar.restartColorCycle();
+            fancyProgressBar.setState(FancyProgressBar.ProgressState.LOADING);
         });
 
-        // לחצן: הצלחה
         btnShowSuccess.setOnClickListener(v -> {
             loadingButton.setState(LoadingButton.ButtonState.SUCCESS);
-            fancyProgressBar.stopColorCycle();
+            fancyProgressBar.setState(FancyProgressBar.ProgressState.SUCCESS);
         });
 
-        // לחצן: שגיאה
         btnShowError.setOnClickListener(v -> {
             loadingButton.setState(LoadingButton.ButtonState.ERROR);
-            fancyProgressBar.stopColorCycle();
+            fancyProgressBar.setState(FancyProgressBar.ProgressState.ERROR);
         });
 
-        // לחצן: השבתה
         btnDisable.setOnClickListener(v -> {
             loadingButton.setState(LoadingButton.ButtonState.DISABLED);
-            fancyProgressBar.stopColorCycle();
+            fancyProgressBar.setState(FancyProgressBar.ProgressState.DISABLED);
         });
 
-        // לחצן: איפוס
         btnReset.setOnClickListener(v -> {
             loadingButton.setState(LoadingButton.ButtonState.IDLE);
-            fancyProgressBar.stopColorCycle();
+            fancyProgressBar.setState(FancyProgressBar.ProgressState.IDLE);
         });
+
     }
 }

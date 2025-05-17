@@ -29,11 +29,11 @@ public class LoadingButton extends FrameLayout {
     private String textDisabled = "לא זמין";
 
     // אייקונים לכל מצב (nullable)
+    private int iconSuccessRes = R.drawable.ic_check_circle;
+    private int iconErrorRes = R.drawable.ic_error_outline;
     private int iconIdleRes = 0;
     private int iconLoadingRes = 0;
-    private int iconSuccessRes = 0;
-    private int iconErrorRes = 0;
-    private int iconDisabledRes = 0;
+    private int iconDisabledRes = R.drawable.ic_circle_gray;
 
     // צבעי רקע לכל מצב
     private int bgColorIdle = 0xFF6200EE;

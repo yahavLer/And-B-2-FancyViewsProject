@@ -51,20 +51,17 @@ A circular progress view that:
     android:id="@+id/fancyProgressBar"
     android:layout_width="64dp"
     android:layout_height="64dp" />
-
----
-
-### Java
+```
+### java
 
 ```java
 loadingButton.setState(LoadingButton.ButtonState.LOADING);
 fancyProgressBar.setState(FancyProgressBar.ProgressState.LOADING);
+```
 
 ### Demo App
 The sample app included demonstrates:
-
 How to control the button and progress bar dynamically
-
 How each component changes based on user interaction
 
 <img src="demo.gif" width="400" alt="Demo of FancyViews" />

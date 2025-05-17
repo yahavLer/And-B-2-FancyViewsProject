@@ -73,6 +73,36 @@ fancyviews/         → The library module
 app/                → Demo application
 README.md           → Documentation
 
+## 🧩 How to Use This Library
+
+To use this library in your Android project, follow these steps:
+
+### Step 1: Add the JitPack repository
+
+In your root `settings.gradle` file (or `settings.gradle.kts` if using Kotlin DSL):
+
+```groovy
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+### Step 2: Add the dependency
+In your `app/build.gradle`
+```groovy
+dependencies {
+implementation 'com.github.yahavLer:And-B-2-FancyViewsProject:v1.0.0'
+}
+```
+
+### 🔗 JitPack page:
+[ https://jitpack.io/#yahavLer/And-B-2-FancyViewsProject ]
+https://jitpack.io/#yahavLer/And-B-2-FancyViewsProject/v1.0.0
+
 ### Requirements
 - Min SDK: 21
 - Java 8 or Kotlin 1.8+
